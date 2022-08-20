@@ -109,7 +109,7 @@ function App() {
             rendering ContactList with props
             get all the props from ContactList and shows it all.
             get contacts from useState variable.
-            call removeContactHandler function to delete a contact.
+            add getContactId props with value of removeContactHandler function to delete a contact.
 
           */}
           <Route
@@ -127,6 +127,8 @@ function App() {
           {/* 
             Path : /add
             rendering AddContact with props
+            get all the props from AddContact and shows it all.
+            add addContactHandler props with value of addContactHandler function.
           */}
           <Route
             path="/add"
@@ -138,6 +140,8 @@ function App() {
           {/* 
             Path : /edit
             rendering EditContact with props
+            get all the props from EditContact and shows it all.
+            add updateContactHandler props with value of updateContactHandler function.
           */}
           <Route
             path="/edit"
