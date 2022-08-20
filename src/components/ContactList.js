@@ -4,8 +4,8 @@ import ContactCard from "./ContactCard";
 
 /**
  * mendapatkan props dari App.js berupa :
- * - contacts function     | variable useState berisi semua value list contact
- * - getContactId function | 
+ * - contacts props     | variable useState berisi semua value list contact.
+ * - getContactId props | memanggil removeContactHandler function.
  * 
  * @param {*} props 
  * @returns 
@@ -13,10 +13,22 @@ import ContactCard from "./ContactCard";
 const ContactList = (props) => {
   console.log(props);
 
+  /**
+   * buat fucntion deleteContactHandler yang memiliki parameter id.
+   * 
+   * @param {*} id 
+   */
   const deleteConactHandler = (id) => {
     props.getContactId(id);
   };
 
+  /**
+   * render all contact list function.
+   * Render ContactCard Class and make new props :
+   * - contact      : contact
+   * - clickHandler : deleteContactHandler
+   * - key          : contact.id
+   */
   const renderContactList = props.contacts.map((contact) => {
     return (
       <ContactCard
@@ -26,6 +38,12 @@ const ContactList = (props) => {
       />
     );
   });
+
+  /**
+   * rendering all jsx.
+   * make a router link to /add to button Add Contact
+   * makae a div table render all contactList by calling renderContactList function.
+   */
   return (
     <div className="main">
       <h2>
