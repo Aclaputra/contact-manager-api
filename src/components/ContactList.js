@@ -2,6 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ContactCard from "./ContactCard";
 
+/**
+ * mendapatkan props dari App.js berupa :
+ * - contacts function     | variable useState berisi semua value list contact
+ * - getContactId function | 
+ * 
+ * @param {*} props 
+ * @returns 
+ */
 const ContactList = (props) => {
   console.log(props);
 
