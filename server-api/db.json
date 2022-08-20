@@ -2,13 +2,23 @@
   "contacts": [
     {
       "id": "ndas6asda-jasd9-asd0-kasd8-0nasdnaklasdmlas",
-      "name": "Max Subaru",
-      "email": "dipe@gmail.com"
+      "name": "Toyota Subaru",
+      "email": "tobaru@gmail.com"
     },
     {
       "id": "9199c7a2-1ee3-45ad-b46e-c91e168f175d",
       "name": "Mika Pikazo",
       "email": "mika@gmail.com"
+    },
+    {
+      "id": "ee40674b-1393-4296-84cc-31e7c28f8f0d",
+      "name": "Dipesh Malvia",
+      "email": "dipesh@gmail.com"
+    },
+    {
+      "id": "6cec8099-ada4-4afd-b95b-db0b9b69ac2b",
+      "name": "Muhammad Acla",
+      "email": "acla@km.solutif.co.id"
     }
   ]
 }
