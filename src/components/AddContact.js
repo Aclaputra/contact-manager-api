@@ -21,8 +21,13 @@ class AddContact extends React.Component {
       return;
     }
 
+    /**
+     * put all the variables in state to props addContactHandler function that been given by App.js.
+     */
     this.props.addContactHandler(this.state);
+    
     this.setState({ name: "", email: "" });
+    // push the props into route "/".
     this.props.history.push("/");
   };
   
