@@ -155,7 +155,7 @@ function App() {
 
           {/* 
             Path : /contact/id
-            return ContactDetail component
+            return ContactDetail component.
           */}
           <Route path="/contact/:id" component={ContactDetail} />
 
