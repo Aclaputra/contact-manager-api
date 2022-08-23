@@ -1,8 +1,13 @@
 import React from "react";
 
+/**
+ * AddContact using class can also be a function.
+ */
 class AddContact extends React.Component {
   /**
    * all variables stored in this state.
+   * name with default of null value of string.
+   * email with default of null value of string.
    */
   state = {
     name: "",
@@ -17,7 +22,7 @@ class AddContact extends React.Component {
     e.preventDefault();
     // jika variable name dan email kosong maka berikan sebuah alert dan hentikan.
     if (this.state.name === "" || this.state.email === "") {
-      alert("ALl the fields are mandatory!");
+      alert("All the fields are mandatory!");
       return;
     }
 
@@ -25,7 +30,6 @@ class AddContact extends React.Component {
      * put all the variables in state to props addContactHandler function that been given by App.js.
      */
     this.props.addContactHandler(this.state);
-    
     this.setState({ name: "", email: "" });
     // push the props into route "/".
     this.props.history.push("/");
