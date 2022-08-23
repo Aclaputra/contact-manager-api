@@ -2,11 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import user from "../images/user.jpg";
 
+/**
+ * get the props from App.js
+ * @param {*} props 
+ * @returns 
+ */
 const ContactDetail = (props) => {
   const { name, email } = props.location.state.contact;
   return (
     <div className="main">
       <div className="ui card centered">
+        {/* put user image from images/user.jpg */}
         <div className="image">
           <img src={user} alt="user" />
         </div>
@@ -16,6 +22,9 @@ const ContactDetail = (props) => {
         </div>
       </div>
       <div className="center-div">
+        {/* 
+          make a button link to home where contact list listed.
+        */}
         <Link to="/">
           <button className="ui button blue center">
             Back to Contact List
