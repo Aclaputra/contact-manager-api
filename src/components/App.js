@@ -9,20 +9,30 @@ import ContactList from "./ContactList";
 import ContactDetail from "./ContactDetail";
 import EditContact from "./EditContact";
 
+/**
+ * App.js using react function file can also be a class.
+ * @returns 
+ */
 function App() {
+  /**
+   * all variables stored in useState and const.
+   */
   const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([]);
 
   /**
+   * make read. create. update. and delete. functions~
+   * use async to return promises to response it use await.
+   * 
    * get all contacts
    * @returns 
    */
   const retrieveContacts = async () => {
+    console.log(api.get("/contacts"));
     const response = await api.get("/contacts");
     return response.data;
   };
-
-  /**
+  /** 
    * add contact
    * @param {*} contact 
    */
@@ -37,8 +47,7 @@ function App() {
     console.log(response);
     setContacts([...contacts, response.data]);
   };
-
-  /**
+  /** 
    * update contact
    * @param {*} contact 
    */
@@ -51,8 +60,7 @@ function App() {
       })
     );
   };
-
-  /**
+  /** 
    * delete contact
    * @param {*} id 
    */
@@ -94,8 +102,10 @@ function App() {
     <div className="ui container">
       <Router>
         <Header />
+          {/* <LoadingScreen/> */}
 
-        {/* 
+        {/* render routes with selected components that retrieving props values and returning new props values.
+
           switching between routes ;
           - /           | get all contacts.
           - /add        | add new contact.
@@ -123,7 +133,6 @@ function App() {
               />
             )}
           />
-
           {/* 
             Path : /add
             rendering AddContact with props
@@ -136,7 +145,6 @@ function App() {
               <AddContact {...props} addContactHandler={addContactHandler} />
             )}
           />
-
           {/* 
             Path : /edit
             rendering EditContact with props
@@ -152,17 +160,22 @@ function App() {
               />
             )}
           />
-
           {/* 
             Path : /contact/id
             return ContactDetail component.
           */}
           <Route path="/contact/:id" component={ContactDetail} />
-
         </Switch>
       </Router>
     </div>
   );
 }
+
+// function LoadingScreen() {
+//   return (
+//     <div>LoadingScreen</div>
+//   )
+// }
+
 
 export default App;
